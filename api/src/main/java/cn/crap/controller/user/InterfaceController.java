@@ -168,7 +168,7 @@ public class InterfaceController extends BaseController{
 			 * 普通表单模式不支持content-type设置
 			 */
 			if (contentTypeDto != null){
-                headerList.remove(contentTypeDto);
+                //headerList.remove(contentTypeDto);
             }
         }
         /**
