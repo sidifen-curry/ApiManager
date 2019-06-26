@@ -172,6 +172,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
                 templateUrl : 'resources/html/subTpl/interHeaderEdit.tpl.html?v=v8.0.5'
             }, 'interExampleEdit@userInterfaceEdit' : {
                 templateUrl : 'resources/html/subTpl/interExampleEdit.tpl.html?v=v8.0.5'
+            }, 'interReqExampleEdit@userInterfaceEdit' : {
+                templateUrl : 'resources/html/subTpl/interReqExampleEdit.tpl.html?v=v8.0.5'
             }
         }
     }).state('userInterfaceDetail', {

@@ -104,6 +104,11 @@
                 </tbody>
             </table>
 
+            <h4 class="mt20 mb20 C000">请求示例</h4>
+            <div class="code pl20" ng-if="model.requestExam">
+                <pre>{{model.requestExam}}</pre>
+            </div>
+
             <h4 class="mt20 mb20 C000">返回参数</h4>
             <table class="table table-bordered ml20" ng-if="model.crShowResponseParamList.length>0">
                 <thead>
