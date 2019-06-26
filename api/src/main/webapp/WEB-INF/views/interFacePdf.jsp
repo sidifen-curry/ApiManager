@@ -17,7 +17,7 @@
 
         pre {
             border: 0px;
-            color: #595959;
+            color: #000000;
             font-weight: 100;
             line-height: 24px;
             font-size: 12px;
@@ -41,8 +41,8 @@
 <div style="padding-left:4px;padding-bottom:0px; background:#fff; color:${MAIN_COLOR};font-size:18px;font-weight:bold;">
     ${title}--模块【${moduleName}】
 </div>
-<div style="padding-right:4px;background:#fff; color:#999;font-size:12px;text-align:right;">
-    本系统由CrapApi【crap.cn】提供技术支持
+<div style="padding-right:4px;background:#fff; color:#000000;font-size:12px;text-align:right;">
+    中国东信安全隐私号
 </div>
 <div style="clear:both;height:2px;width:100%;background:${MAIN_COLOR};"></div>
 <!-- 列表 -->
@@ -56,7 +56,7 @@
 <!-- 内容 -->
 <c:forEach var="f" items="${requestScope.interfaces}" varStatus="status">
     <div style="height:20px;"></div>
-    <div style="padding:20px;padding-top:10px;background:#f6f6f6; margin-top:20px;font-size:14px;color:#999;">
+    <div style="padding:20px;padding-top:10px;background:#f6f6f6; margin-top:20px;font-size:14px;color:#000;">
         <div style="margin-left:-10px;font-size:18px;font-weight:bold;color:${MAIN_COLOR};">${ status.index + 1}、 ${f.model.interfaceName}</div>
         <h3>(1) 功能说明</h3>
             ${f.model.remark}
@@ -69,23 +69,13 @@
             ${f.model.version}
         <br/>
         <br/>
-        <h3>(4) Mock地址</h3>
-        正确：${f.trueMockUrl}<br/>
-        错误：${f.falseMockUrl}
-        <br/>
-        <br/>
 
-        <h3>(5) HTTP请求方式</h3>
+        <h3>(4) HTTP请求方式</h3>
             ${f.model.method}
         <br/>
         <br/>
 
-        <h3>(6) 返回contentType类型</h3>
-            ${f.model.contentType}
-        <br/>
-        <br/>
-
-        <h3>(7) 请求头说明</h3>
+        <h3>(5) 请求头说明</h3>
         <table style="width:100%;">
             <tr style="background:${MAIN_COLOR};color:#fff;">
                 <td>名称</td>
@@ -105,7 +95,7 @@
             </c:forEach>
         </table>
         <br/>
-        <h3>(8) 输入参数说明<c:if test="${f.customParams!=null}">(自定义参数)</c:if></h3>
+        <h3>(6) 输入参数说明<c:if test="${f.customParams!=null}">(自定义参数)</c:if></h3>
         <c:if test="${f.formParams!=null}">
             <table style="width:100%;">
                 <tr style="background:${MAIN_COLOR};color:#fff;">
@@ -130,10 +120,21 @@
             </table>
         </c:if>
         <c:if test="${f.customParams!=null}">
-            <h5 style="color:#999999;">请求示列</h5>
+            <h5 style="color:#000000;">请求示列</h5>
             ${f.customParams}
             <br/><br/>
         </c:if>
+
+        <h3>(7) 请求示例</h3>
+        <div style="background:#F0F0F0; padding:10px;">
+            <pre>${f.model.requestExam}</pre>
+        </div>
+        <br/>
+
+        <h3>(8) 返回contentType类型</h3>
+            ${f.model.contentType}
+        <br/>
+        <br/>
 
         <br/>
         <h3>(9) 返回数据说明</h3>
