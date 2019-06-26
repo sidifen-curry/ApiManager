@@ -106,7 +106,7 @@
     <div class="cb"></div>
 </div>
 
-<div class="BGF9 pt20 mt50">
+<%--<div class="BGF9 pt20 mt50">
     <div class="container p0">
         <div class="tc f30 fw400 mb10 mt50">项目主页</div>
         <div class="w50 adorn-bt-3 bc mb20"> </div>
@@ -116,7 +116,7 @@
         <div class="w50 adorn-bt-3 bc mb20"> </div>
         <img src="resources/images/chrome_debug.jpg" class="w shadow mb50">
     </div>
-</div>
+</div>--%>
 
 <div class="BGF9 pt20 pb50">
     <div class="container BGFFF pt20 pb20 shadow">
@@ -142,7 +142,7 @@
     </div>
 </div>
 
-<div class="container p0">
+<%--<div class="container p0">
         <!-- 求赞赏 -->
         <div class="cb"></div>
         <div class="lh26 f12 p30">
@@ -170,7 +170,7 @@
                 </td>
             </table>
         </div>
-</div>
+</div>--%>
 
 
 <!-- footer navbar -->
