@@ -227,6 +227,7 @@ var interNecessaryHtml = "<td> <select name='necessary' class='form-control'>"
     + "</select></td>";
 var interTypeHtml = "<td> <select name='type' class='form-control'>"
     + "<option value='string' string_select>string</option>"
+    + "<option value='jsonObject' jsonObject_select>jsonObject</option>"
     + "<option value='int' int_select>int</option>"
     + "<option value='float' float_select>float</option>"
     + "<option value='long' long_select>long</option>"
