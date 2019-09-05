@@ -127,7 +127,7 @@
 				</td>
 				<td ng-class="{true: 'bg-danger', false:''}[item.necessary == 'true']">{{item.necessary}}</td>
 				<td ng-if="item.inUrl && item.inUrl=='true'">请求URL</td>
-				<td ng-if="!item.inUrl || item.inUrl!='true'">普通参数</td>
+				<td ng-if="!item.inUrl || item.inUrl!='true'">请求体</td>
 				<td>{{item.type}}</td>
 				<td>{{item.def}}</td>
 				<td>{{item.remark}}</td>

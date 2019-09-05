@@ -173,7 +173,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<td class="tc C000">请求URL</td>
 					</c:if>
 					<c:if test="${item.inUrl==null || item.inUrl!='true'}">
-						<td class="tc C000">普通参数</td>
+						<td class="tc C000">请求体</td>
 					</c:if>
 					<td class="tc C000">${item.type}</td>
 					<td class="tc C000">${item.def}</td>

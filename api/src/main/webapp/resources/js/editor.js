@@ -265,7 +265,7 @@ var dictFlagHtml = "<td><select name='flag' class='form-control'>" +
  * 请求参数
  */
 var interParamPositionHtml = "<td> <select name='inUrl' class='form-control'>"
-    + "<option value='false' false_select>普通参数</option>"
+    + "<option value='false' false_select>请求体</option>"
     + "<option value='true' true_select>URL路径</option>"
     + "</select></td>";
 

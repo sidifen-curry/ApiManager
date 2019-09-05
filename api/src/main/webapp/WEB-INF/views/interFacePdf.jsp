@@ -111,8 +111,8 @@
                     <tr>
                         <td>${v.name}</td>
                         <td>${v.necessary}</td>
-                        <td>${v.inUrl=='true'?'URL地址':'普通参数'}</td>
-                        <td>${v.type}</td>
+                        <td>${v.inUrl=='true'?'URL地址':'请求体'}</td>
+                        <td>${v.type}</td>f
                         <td>${v.def}</td>
                         <td>${v.remark}</td>
                     </tr>
