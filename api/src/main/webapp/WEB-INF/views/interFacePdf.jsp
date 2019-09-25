@@ -12,7 +12,7 @@
         ;
         -->
         body {
-            font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+            font-family: Arial,"Microsoft YaHei","Lantinghei SC", "Open Sans",  "Hiragino Sans GB",  "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
         }
 
         pre {
@@ -20,7 +20,7 @@
             color: #000000;
             font-weight: 100;
             line-height: 24px;
-            font-size: 12px;
+            font-size: 18px;
         }
 
         td {
@@ -38,15 +38,15 @@
 </head>
 <body screen_capture_injected="true" ryt11773="1" style="padding:10px;">
 <!-- 标题 -->
-<div style="padding-left:4px;padding-bottom:0px; background:#fff; color:${MAIN_COLOR};font-size:18px;font-weight:bold;">
+<div style="padding-left:4px;padding-bottom:0px; background:#fff;font-size:18px;font-weight:bold;">
     ${title}--模块【${moduleName}】
 </div>
 <div style="padding-right:4px;background:#fff; color:#000000;font-size:12px;text-align:right;">
     中国东信安全隐私号
 </div>
-<div style="clear:both;height:2px;width:100%;background:${MAIN_COLOR};"></div>
+<%--<div style="clear:both;height:2px;width:100%;background:#000;"></div>--%>
 <!-- 列表 -->
-<div style="font-size:18px;line-height:36px; color:${MAIN_COLOR};padding:15px;background:#eeeeee;">
+<div style="font-size:18px;line-height:36px; padding:15px;>
     <div style="color:#000000;font-size:20px;">目录</div>
     <c:forEach var="f" items="${requestScope.interfaces}" varStatus="status">
         ${ status.index + 1}. ${f.model.interfaceName}<br/>
@@ -56,8 +56,8 @@
 <!-- 内容 -->
 <c:forEach var="f" items="${requestScope.interfaces}" varStatus="status">
     <div style="height:20px;"></div>
-    <div style="padding:20px;padding-top:10px;background:#f6f6f6; margin-top:20px;font-size:14px;color:#000;">
-        <div style="margin-left:-10px;font-size:18px;font-weight:bold;color:${MAIN_COLOR};">${ status.index + 1}、 ${f.model.interfaceName}</div>
+    <div style="padding:20px;padding-top:10px; margin-top:20px;font-size:14px;color:#000;">
+        <div style="margin-left:-10px;font-size:18px;font-weight:bold;">${ status.index + 1}、 ${f.model.interfaceName}</div>
         <h3>(1) 功能说明</h3>
             ${f.model.remark}
         <br/>
@@ -76,8 +76,8 @@
         <br/>
 
         <h3>(5) 请求头说明</h3>
-        <table style="width:100%;">
-            <tr style="background:${MAIN_COLOR};color:#fff;">
+        <table style="width:100%; border: 1px solid #000;border-collapse: collapse;">
+            <tr style="">
                 <td>名称</td>
                 <td>是否必须</td>
                 <td>类型</td>
@@ -97,8 +97,8 @@
         <br/>
         <h3>(6) 输入参数说明<c:if test="${f.customParams!=null}">(自定义参数)</c:if></h3>
         <c:if test="${f.formParams!=null}">
-            <table style="width:100%;">
-                <tr style="background:${MAIN_COLOR};color:#fff;">
+            <table style="width:100%;border: 1px solid #000;border-collapse: collapse;">
+                <tr style="">
                     <td>名称</td>
                     <td style="width:50px;">是否必须</td>
                     <td style="width:50px;">参数位置</td>
@@ -126,8 +126,8 @@
         </c:if>
 
         <h3>(7) 请求示例</h3>
-        <div style="background:#F0F0F0; padding:10px;">
-            <pre>${f.model.requestExam}</pre>
+        <div style=" padding:10px;">
+            <pre style="font-size: 18px;">${f.model.requestExam}</pre>
         </div>
         <br/>
 
@@ -138,8 +138,8 @@
 
         <br/>
         <h3>(9) 返回数据说明</h3>
-        <table style="width:100%;">
-            <tr style="background:${MAIN_COLOR};color:#fff;">
+        <table style="width:100%;border: 1px solid #000;border-collapse: collapse;">
+            <tr style="">
                 <td>名称</td>
                 <td style="width:50px;">类型</td>
                 <td style="width:50px;">是否必须</td>
@@ -158,18 +158,18 @@
         </table>
         <br/>
         <h3>(10) 正确返回示例</h3>
-        <div style="background:#F0F0F0; padding:10px;">
-            <pre>${f.model.trueExam}</pre>
+        <div style=" padding:10px;">
+            <pre style="font-size: 18px;">${f.model.trueExam}</pre>
         </div>
         <br/>
         <h3>(11) 错误返回示例</h3>
-        <div style="background:#F0F0F0; padding:10px;">
-            <pre>${f.model.falseExam}</pre>
+        <div style="padding:10px;">
+            <pre style="font-size: 18px;">${f.model.falseExam}</pre>
         </div>
         <br/>
         <h3>(12) 错误码</h3>
-        <table style="width:100%;">
-            <tr style="background:${MAIN_COLOR};color:#fff;">
+        <table style="width:100%;border: 1px solid #000;border-collapse: collapse;">
+            <tr style="">
                 <td>Code</td>
                 <td>Msg</td>
             </tr>
