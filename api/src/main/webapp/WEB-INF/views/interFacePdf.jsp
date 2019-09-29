@@ -54,24 +54,29 @@ h1, h2, h3, h4, h5 {
     <div style="height:20px;"></div>
     <div style="padding:20px;padding-top:10px; margin-top:20px;font-size:14px;color:#000;">
         <div style="margin-left:-10px;font-size:18px;font-weight:bold;">${ status.index + 1}、 ${f.model.interfaceName}</div>
-        <h3>(1) 功能说明</h3>
+        <h3>${ status.index + 1}.1 接口说明</h3>
+            <h4>${ status.index + 1}.1.1 功能说明</h4>
             ${f.model.remark}
-        <br/>
-        <h3>(2) URL地址</h3>
-            ${f.model.moduleUrl}${f.model.url}
-        <br/>
-        <br/>
-        <h3>(3) 版本号</h3>
+            <h4>${ status.index + 1}.1.2 版本号</h4>
             ${f.model.version}
         <br/>
         <br/>
-
-        <h3>(4) HTTP请求方式</h3>
+            <h4>${ status.index + 1}.1.3 HTTP请求方式</h4>
             ${f.model.method}
         <br/>
         <br/>
+            <h4>${ status.index + 1}.1.4 返回contentType类型</h4>
+            ${f.model.contentType}
+        <br/>
+        <br/>
+            <h4>${ status.index + 1}.1.5 URL地址</h4>
+            ${f.model.moduleUrl}${f.model.url}
+        <br/>
+        <br/>
 
-        <h3>(5) 请求头说明</h3>
+        <h3>${ status.index + 1}.2 请求头说明</h3>
+        <c:choose>
+        <c:when test="${not empty f.headers}">
         <table style="width:100%; border: 1px solid #000;border-collapse: collapse;">
             <tr style="">
                 <td>名称</td>
@@ -82,16 +87,20 @@ h1, h2, h3, h4, h5 {
             </tr>
             <c:forEach var="v" items="${f.headers}">
                 <tr>
-                     <td>${v.name}</td>
+                    <td>${v.name}</td>
                     <td style="width:50px;">${v.necessary}</td>
                     <td style="width:50px;">${v.type}</td>
-                      <td style="width:50px;">${v.def}</td>
+                    <td style="width:50px;">${v.def}</td>
                     <td style="width:50px;">${v.remark}</td>
                 </tr>
             </c:forEach>
         </table>
         <br/>
-         <h3>(6) 输入参数说明<c:if test="${f.customParams!=null}">(自定义参数)</c:if></h3>
+        </c:when>
+        <c:otherwise>无</c:otherwise>
+        </c:choose>
+        
+        <h3>${ status.index + 1}.3 输入参数说明<c:if test="${f.customParams!=null}">(自定义参数)</c:if></h3>
         <c:if test="${f.formParams!=null}">
             <table style="width:100%;border: 1px solid #000;border-collapse: collapse;">
                  <tr style="">
@@ -119,17 +128,19 @@ h1, h2, h3, h4, h5 {
             ${f.customParams}
             <br/><br/>
         </c:if>
-     <h3>(7) 请求示例</h3>
+        <h4>请求示例</h4>
+		<c:choose>
+        <c:when test="${f.model.requestExam=='{}'}">
+          无
+        </c:when>
+		<c:otherwise>
         <div style=" padding:10px;">
-            <pre style="font-size: 18px;">${f.model.requestExam}</pre>
+            <pre style="font-size: 14px;">${f.model.requestExam}</pre>
         </div>
+		</c:otherwise>
+        </c:choose>
         <br/>
-      <h3>(8) 返回contentType类型</h3>
-            ${f.model.contentType}
-        <br/>
-        <br/>
-      <br/>
-        <h3>(9) 返回数据说明</h3>
+        <h3>${ status.index + 1}.4 返回数据说明</h3>
         <table style="width:100%;border: 1px solid #000;border-collapse: collapse;">
             <tr style="">
                 <td>名称</td>
@@ -149,17 +160,33 @@ h1, h2, h3, h4, h5 {
             </c:forEach>
         </table>
         <br/>
-        <h3>(10) 正确返回示例</h3>
-        <div style=" padding:10px;">
-            <pre style="font-size: 18px;">${f.model.trueExam}</pre>
+        <h4>成功返回示例</h4>
+        <c:choose>
+        <c:when test="${f.model.trueExam=='{}'}">
+          无
+        </c:when>
+        <c:otherwise>
+           <div style=" padding:10px;">
+             <pre style="font-size: 14px;">${f.model.trueExam}</pre>
           </div>
+        </c:otherwise>
+        </c:choose>
         <br/>
-        <h3>(11) 错误返回示例</h3>
+        <h4>失败返回示例</h4>
+		<c:choose>
+        <c:when test="${f.model.falseExam=='{}'}">
+          无
+        </c:when>
+		<c:otherwise>
         <div style="padding:10px;">
-            <pre style="font-size: 18px;">${f.model.falseExam}</pre>
+            <pre style="font-size: 14px;">${f.model.falseExam}</pre>
         </div>
-          <br/>
-        <h3>(12) 错误码</h3>
+		</c:otherwise>
+        </c:choose>
+        <br/>
+        <h3>${ status.index + 1}.5 状态码</h3>
+        <c:choose>
+        <c:when test="${not empty f.errors}">
         <table style="width:100%;border: 1px solid #000;border-collapse: collapse;">
             <tr style="">
                 <td>Code</td>
@@ -172,6 +199,9 @@ h1, h2, h3, h4, h5 {
                 </tr>
             </c:forEach>
         </table>
+        </c:when>
+        <c:otherwise>无</c:otherwise>
+        </c:choose>
     </div>
 </c:forEach>
 
